@@ -1,0 +1,10 @@
+*.pyc
+*~
+__pycache__
+imgvenv
+db.sqlite3
+/static
+/media
+migrations
+.DS_Store
+settings.py
