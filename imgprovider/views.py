@@ -30,6 +30,6 @@ def image_post_view(request):
 def display_top_of_images(request): 
   
     if request.method == 'GET': 
-        ImgPosts = ImgPost.objects.all().order_by('rating')[:10]
+        ImgPosts = ImgPost.objects.all().order_by('-rating')[:10]
 
         return render(request, 'display_image_posts.html', {'image_posts' : ImgPosts}) 
