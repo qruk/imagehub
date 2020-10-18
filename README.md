@@ -1,18 +1,18 @@
-Создаем виртуальное окружение:
+* Создаем виртуальное окружение:
 ```python3 -m venv imgvenv```
-Переходим в виртуальное окружение
+* Переходим в виртуальное окружение
 ```source imgvenv/bin/activate```   
-Обновляем загрузчик зависимостей
+* Обновляем загрузчик зависимостей
 ```python3 -m pip install --upgrade pip```  
-Обновляем зависимости
+* Обновляем зависимости
 ```pip3 install -r requirements.txt```   
-Создаем миграцию в БД
+* Создаем миграцию в БД
 ```python3 manage.py makemigrations```
-Проводим миграцию в БД
+* Проводим миграцию в БД
 ```python3 manage.py migrate```   
-Обновляем статичные файлы
+* Обновляем статичные файлы
 ```python3 manage.py collectstatic```
-Создаем суперюзера
+* Создаем суперюзера
 ```python3 manage.py createsuperuser```
-Запускаем сервер
+* Запускаем сервер
 ```python3 manage.py runserver```           
