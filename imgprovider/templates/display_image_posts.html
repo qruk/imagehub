@@ -1,10 +1,17 @@
-{% extends 'base.html' %} &nbsp;
-
+{% extends 'baseMy.html' %} &nbsp;
+<title>Страница пользователя</title>
 {% block content %}
+    <p class="text"> Топ 10 картинок  по рейтингу </p>
     {% for post in image_posts %} 
-            <div class="col-md-4"> 
-                    {{ post.name }} 
-                     <img src="{{ post.image.url }}" class="img-responsive" style="width: 100%; float: left; margin-right: 10px;" /> 
+            <div class="col-md-4">
+                     <p text-align="center"><img  height="400px"  src="{{ post.image.url }}" class="img-responsive" style="width: 60%;  margin-right: 10px;" /></p>
+                     <p class="text">
+                         <form action="up_rating/" method="post">
+                        {% csrf_token %}
+                         <button name="{{ post.id}}" class="button" type="submit" >
+                             Повысить рейтинг</button>  </form>{{ post.author}}   Рейтинг {{ post.rating}}</p>
+
+
             </div> 
     {% endfor %} 
 {% endblock content %}

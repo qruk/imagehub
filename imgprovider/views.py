@@ -19,7 +19,7 @@ def image_post_view(request):
     else: 
         form = ImgForm() 
 
-    return render(request, 'img_post_form.html', {'form' : form}) 
+    return render(request, 'img_post_form.html', {'form' : form, 'Title':'Добавить фото'})
 
 # Success after uloading
 #@login_required
@@ -31,4 +31,18 @@ def display_top_of_images(request):
     if request.method == 'GET': 
         ImgPosts = ImgPost.objects.all().order_by('-rating')[:10]
 
-        return render(request, 'display_image_posts.html', {'image_posts' : ImgPosts}) 
+    return render(request, 'display_image_posts.html', {'image_posts' : ImgPosts, 'Title':'Главная страница'})
+
+def up_rating(request): #Для повышения рейтинга нужно найти картинку
+    if request.method == 'POST':
+        #Img_id = request.POST.get("id", False)
+        ImgPosts = ImgPost.objects.all()
+        for Img in ImgPosts:
+            print(Img.id)
+            if request.GET.get(str(Img.id), False):
+                Img.rating += 1
+                Img.save()
+
+
+    return redirect('/')
+
