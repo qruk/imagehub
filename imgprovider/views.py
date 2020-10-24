@@ -38,7 +38,6 @@ def vote_for_image(request):
         form = VoteForm(request.POST)
 
         if form.is_valid():
-            print('something')
             vote = form.save(commit=False)
             vote.user = request.user
 
