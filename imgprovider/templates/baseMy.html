@@ -4,18 +4,21 @@
 <meta charset="utf-8" />
 <title>{{ Title }} </title>
      <style type="text/css">
-                       #h {
+                      #h 
+                      {
                         font-size: 120%; /* Размер шрифта */
                         color: ##0000FF;
                         font-size: 25px;
                         text-align:center;
-                       }
+                      }
 
 
-                       body {
-                       background: #B0E0E6;
-                       }
-                         .button {
+                      body 
+                      {
+                        background: #B0E0E6;
+                      }
+                      .button 
+                      {
                         width: 250px;
                         border-bottom: 1px dashed;
                         font-size: 12px;
@@ -29,19 +32,23 @@
                         background: #696969;
                         font-weight: bold;
                       }
-                      .input {
-                      width: 250px;
+                      .input 
+                      {
+                        width: 250px;
                       }
-                      .image {
-                      width: 100px;
-                      height: 100px;
+                      .image 
+                      {
+                        width: 100px;
+                        height: 100px;
                       }
-                      .image2 {
-                      width: 10px;
-                      height: 10px;
+                      .image2 
+                      {
+                        width: 10px;
+                        height: 10px;
                       }
-                      .text {
-                       font-size: 120%; /* Размер шрифта */
+                      .text 
+                      {
+                        font-size: 120%; /* Размер шрифта */
                         color: #006400;
                         font-size: 20px;
                         text-align:center;
@@ -90,7 +97,7 @@ style="width:100%; border-radius:5px;">
         <th style="width:80%">
 
 <!--Содержание ячейки столбца-->
-        <h1 class="h">Fotogram</h1>
+        <a href="{% url 'top' %}"><h1 class="h">Fotogram</h1></a>
         <h3>сайта для ваших фото</h3>
 <!--Закрываем таблицу-->
         </th>
@@ -100,16 +107,12 @@ align="right">
             {% load static %}
             {% if user.is_authenticated %}
                 <p class="text">Привет {{ user.username }}!</p>
-                <button type="submit" class="button"><a href="{% url 'logout' %}">Выйти</a></button> <br>
-                <button type="submit" class="button"> <a class="text" href="{% url 'login' %}">Войти</a></button> <br>
-                <button type="submit" class="button"><a href="/accounts/signup ">Регистрация</a></button> <br>
-                <button type="submit" class="button"><a href="{% url 'upload' %}">+Добавить фото</a></button> <br>
-
-
-
+                <a href="{% url 'logout' %}"><button type="submit" class="button">Выйти</button></a> <br>
+                <a href="{% url 'upload' %}"><button type="submit" class="button">+Добавить фото</button></a> <br>
             {% else %}
                 <p class="text">Вы не вошли в систему.</p>
-                <a class="text" href="{% url 'login' %}">Log In</a>
+                <a href="{% url 'login' %}"><button type="submit" class="button">Log In</button></a> <br>
+                <a href="/accounts/signup "><button type="submit" class="button">Регистрация</button></a> <br>
                 <p></p>
             {% endif %}
 <!--Закрываем ячейку с общей информацией

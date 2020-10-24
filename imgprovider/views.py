@@ -33,16 +33,13 @@ def display_top_of_images(request):
 
     return render(request, 'display_image_posts.html', {'image_posts' : ImgPosts, 'Title':'Главная страница'})
 
-def up_rating(request): #Для повышения рейтинга нужно найти картинку
+def vote_for_image(request):
     if request.method == 'POST':
-        #Img_id = request.POST.get("id", False)
-        ImgPosts = ImgPost.objects.all()
-        for Img in ImgPosts:
-            print(Img.id)
-            if request.GET.get(str(Img.id), False):
-                Img.rating += 1
-                Img.save()
+        form = VoteForm(request.POST)
 
+        if form.is_valid():
+            image = ImgPost.objects.get(id = form.cleaned_data['image_id'])
+            image.get_vote(user = request.user, vote = form.cleaned_data['vote'])
 
     return redirect('/')
 
