@@ -13,13 +13,13 @@
                     <form action="vote_for_image/" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="vote" value="{{ True }}" />
-                        <input type="hidden" name="image_id" value="{{ post.id }}" />
+                        <input type="hidden" name="image" value="{{ post.id }}" />
                         <button class="button" type="submit" > ∧ </button>
                     </form>
                     <form action="vote_for_image/" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="vote" value="{{ False }}" />
-                        <input type="hidden" name="image_id" value="{{ post.id }}" />
+                        <input type="hidden" name="image" value="{{ post.id }}" />
                         <button class="button" type="submit" > ∨ </button>
                     </form>
                 {% endif %}

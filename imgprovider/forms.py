@@ -6,6 +6,8 @@ class ImgForm(forms.ModelForm):
         model = ImgPost 
         fields = ['title', 'image'] 
 
-class VoteForm(forms.Form):
-    vote = forms.BooleanField(widget=forms.HiddenInput(), required=False)
-    image_id = forms.IntegerField(widget=forms.HiddenInput())
+class VoteForm(forms.ModelForm):
+	class Meta:
+		model = Vote
+		fields = ['vote', 'image']
+		widgets = {'vote': forms.HiddenInput(), 'image': forms.HiddenInput(), }

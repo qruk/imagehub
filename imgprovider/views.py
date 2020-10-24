@@ -38,8 +38,19 @@ def vote_for_image(request):
         form = VoteForm(request.POST)
 
         if form.is_valid():
-            image = ImgPost.objects.get(id = form.cleaned_data['image_id'])
-            image.get_vote(user = request.user, vote = form.cleaned_data['vote'])
+            print('something')
+            vote = form.save(commit=False)
+            vote.user = request.user
+
+            # If changing vote or voting virst time
+            current_vote = Vote.objects.filter(image = vote.image, user = vote.user)
+
+            if not current_vote.exists():
+                vote.set_vote()
+
+            elif current_vote[0].vote != vote.vote:
+                updating_vote = Vote.objects.get(image = vote.image, user = vote.user)
+                updating_vote.set_vote(vote = vote.vote)         
 
     return redirect('/')
 
