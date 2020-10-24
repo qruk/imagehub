@@ -8,7 +8,6 @@
                 <p class="text">
                     {{ post.author }} Рейтинг {{ post.rating }}
                 </p>
-                {% load static %}
                 {% if user.is_authenticated %}
                     <form action="vote_for_image/" method="post">
                         {% csrf_token %}

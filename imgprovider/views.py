@@ -21,18 +21,8 @@ def image_post_view(request):
 
     return render(request, 'img_post_form.html', {'form' : form, 'Title':'Добавить фото'})
 
-# Success after uloading
-#@login_required
-#def success(request, post_id):
-
-# View for main page: top of images
-def display_top_of_images(request): 
-  
-    if request.method == 'GET': 
-        ImgPosts = ImgPost.objects.all().order_by('-rating')[:10]
-
-    return render(request, 'display_image_posts.html', {'image_posts' : ImgPosts, 'Title':'Главная страница'})
-
+# Vote for image view
+@login_required
 def vote_for_image(request):
     if request.method == 'POST':
         form = VoteForm(request.POST)
@@ -52,4 +42,12 @@ def vote_for_image(request):
                 updating_vote.set_vote(vote = vote.vote)         
 
     return redirect('/')
+
+# View for main page: top of images
+def display_top_of_images(request): 
+  
+    if request.method == 'GET': 
+        ImgPosts = ImgPost.objects.all().order_by('-rating')[:10]
+
+    return render(request, 'display_image_posts.html', {'image_posts' : ImgPosts, 'Title':'Главная страница'})
 
