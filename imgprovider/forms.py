@@ -4,7 +4,7 @@ from .models import *
 class ImgForm(forms.ModelForm): 
     class Meta: 
         model = ImgPost 
-        fields = ['title', 'image'] 
+        fields = ['title', 'image', 'published_date']
 
 class VoteForm(forms.ModelForm):
 	class Meta:

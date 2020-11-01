@@ -48,6 +48,21 @@ def display_top_of_images(request):
   
     if request.method == 'GET': 
         ImgPosts = ImgPost.objects.all().order_by('-rating')[:10]
+        print(len(ImgPost.objects.all()))
 
-    return render(request, 'display_image_posts.html', {'image_posts' : ImgPosts, 'Title':'Главная страница'})
+    return render(request, 'display_image_posts.html', {'image_posts' : ImgPosts, 'Title':' Топ картинок по рейтингу'})
 
+
+def display_latest_of_images(request):
+    if request.method == 'GET':
+        ImgPosts = ImgPost.objects.all().order_by('-published_date')
+        print(len(ImgPost.objects.all()))
+
+    return render(request, 'display_all_ image_posts.html', {'image_posts': ImgPosts, 'Title': 'Самые новые картинки'})
+
+def display_user_page(request):
+    if request.method == 'GET':
+        ImgPosts = ImgPost.objects.all().order_by('-published_date')
+        print(len(ImgPost.objects.all()))
+
+    return render(request, 'user_page.html', {'image_posts': ImgPosts, 'Title': 'Ваша страница'})
