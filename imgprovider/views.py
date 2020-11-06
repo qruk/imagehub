@@ -1,3 +1,4 @@
+import time
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -44,32 +45,45 @@ def vote_for_image(request):
     return redirect('/')
 
 @login_required
+def delete_image(request):
+    if request.method == 'POST':
+        img_id = request.POST['image']
+        ImgPost.objects.filter(id=img_id).delete()
+    return redirect('/user')
+
+@login_required
 def public_image(request):
     if request.method == 'POST':
-        pass
-    return redirect('/')
+        id = request.POST.get('image')
+        Img = ImgPost.objects.get(id=id)
+        if Img:
+            Img.published_date = time.strftime("%Y-%m-%d %H:%MZ", time.localtime())
+            print("%Y-%m-%d %M:%SZ", time.localtime())
+            Img.save()
+    return redirect('/user')
 
 
 # View for main page: top of images
 def display_top_of_images(request): 
   
     if request.method == 'GET': 
-        ImgPosts = ImgPost.objects.all().order_by('-rating')[:10]
-        print(len(ImgPost.objects.all()))
+        ImgPosts = ImgPost.objects.exclude(published_date=None).order_by('-rating')[:10]
+        # print(len(ImgPost.objects.all()))1
 
     return render(request, 'display_image_posts.html', {'image_posts' : ImgPosts, 'Title':' Топ картинок по рейтингу'})
 
 
 def display_latest_of_images(request):
     if request.method == 'GET':
-        ImgPosts = ImgPost.objects.all().order_by('-published_date')
-        print(len(ImgPost.objects.all()))
+        ImgPosts = ImgPost.objects.exclude(published_date=None).order_by('-published_date')
+        # print(len(ImgPost.objects.all()))
 
     return render(request, 'display_all_ image_posts.html', {'image_posts': ImgPosts, 'Title': 'Самые новые картинки'})
+
 
 def display_user_page(request):
     if request.method == 'GET':
         ImgPosts = ImgPost.objects.all().order_by('-published_date')
-        print(len(ImgPost.objects.all()))
+        # print(len(ImgPost.objects.all()))
 
     return render(request, 'user_page.html', {'image_posts': ImgPosts, 'Title': 'Ваша страница'})

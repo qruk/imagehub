@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a947d2b-ec36-42be-ac05-86f08eec9c86" name="Default Changelist" comment="" />
+    <list default="true" id="5a947d2b-ec36-42be-ac05-86f08eec9c86" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/imagehub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/imagehub.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgprovider/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/imgprovider/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgprovider/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/imgprovider/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgprovider/templates/user_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/imgprovider/templates/user_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgprovider/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/imgprovider/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgprovider/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/imgprovider/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,26 +30,16 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -53,5 +52,11 @@
       <updated>1603037310410</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="411" y="112" width="1022" height="737" key="SettingsEditor" timestamp="1604585505357">
+      <screen x="70" y="27" width="1648" height="901" />
+    </state>
+    <state x="411" y="112" width="1022" height="737" key="SettingsEditor/70.27.1648.901@70.27.1648.901" timestamp="1604585505357" />
   </component>
 </project>

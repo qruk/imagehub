@@ -11,31 +11,15 @@
                 </p>
                     <form action="public_image/" method="post">
                         {% csrf_token %}
-                        <input type="hidden" name="vote" value="{{ False }}" />
                         <input type="hidden" name="image" value="{{ post.id }}" />
                         <button class="button" type="submit" > Опубликовать </button>
                     </form>
                     <form action="del_image/" method="post">
                         {% csrf_token %}
-                        <input type="hidden" name="vote" value="{{ False }}" />
                         <input type="hidden" name="image" value="{{ post.id }}" />
                         <button class="button" type="submit" > Удалить </button>
                     </form>
 
-                {% endif %}
-                {% if user.is_authenticated %}
-                    <form action="vote_for_image/" method="post">
-                        {% csrf_token %}
-                        <input type="hidden" name="vote" value="{{ True }}" />
-                        <input type="hidden" name="image" value="{{ post.id }}" />
-                        <button class="button" type="submit" > ∧ </button>
-                    </form>
-                    <form action="vote_for_image/" method="post">
-                        {% csrf_token %}
-                        <input type="hidden" name="vote" value="{{ False }}" />
-                        <input type="hidden" name="image" value="{{ post.id }}" />
-                        <button class="button" type="submit" > ∨ </button>
-                    </form>
                 {% endif %}
             </div>
     {% endfor %} 
