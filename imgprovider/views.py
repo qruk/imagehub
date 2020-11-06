@@ -43,6 +43,13 @@ def vote_for_image(request):
 
     return redirect('/')
 
+@login_required
+def public_image(request):
+    if request.method == 'POST':
+        pass
+    return redirect('/')
+
+
 # View for main page: top of images
 def display_top_of_images(request): 
   
