@@ -1,0 +1,26 @@
+{% extends 'baseBlock.html' %} &nbsp;
+<title>Страница пользователя</title>
+{% block content %}
+    <p class="text"> Новые картинки </p>
+    {% for post in image_posts %}
+            {% if user == post.author %}
+            <div class="col-md-4">
+                <img  height="400px"  src="{{ post.image.url }}" class="img-responsive" style="width: 60%;  margin-right: 10px;" />
+                <p class="text">
+                    {{ post.author }} Рейтинг {{ post.rating }} дата {{ post.published_date }}
+                </p>
+                    <form action="public_image/" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="image" value="{{ post.id }}" />
+                        <button class="button" type="submit" > Опубликовать </button>
+                    </form>
+                    <form action="del_image/" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="image" value="{{ post.id }}" />
+                        <button class="button" type="submit" > Удалить </button>
+                    </form>
+
+                {% endif %}
+            </div>
+    {% endfor %} 
+{% endblock content %}
