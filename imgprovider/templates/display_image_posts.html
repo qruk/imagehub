@@ -6,7 +6,7 @@
             <div class="col-md-4">
                 <img  height="400px"  src="{{ post.image.url }}" class="img-responsive" style="width: 60%;  margin-right: 10px;" />
                 <p class="text">
-                    {{ post.author }} Рейтинг {{ post.rating }}
+                    {{ post.author }} Рейтинг {{ post.rating }} Имя {{ post.title  }}
                 </p>
                 {% if user.is_authenticated %}
                     <form action="vote_for_image/" method="post">

@@ -7,7 +7,7 @@
             <div class="col-md-4">
                 <img  height="400px"  src="{{ post.image.url }}" class="img-responsive" style="width: 60%;  margin-right: 10px;" />
                 <p class="text">
-                    {{ post.author }} Рейтинг {{ post.rating }} дата {{ post.published_date }}
+                    {{ post.author }} Рейтинг {{ post.rating }} дата {{ post.published_date }} Имя {{ post.title }}
                 </p>
                     <form action="public_image/" method="post">
                         {% csrf_token %}
@@ -19,8 +19,7 @@
                         <input type="hidden" name="image" value="{{ post.id }}" />
                         <button class="button" type="submit" > Удалить </button>
                     </form>
-
+		</div>
                 {% endif %}
-            </div>
-    {% endfor %} 
+           {% endfor %}     
 {% endblock content %}
