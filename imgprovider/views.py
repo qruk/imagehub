@@ -52,6 +52,13 @@ def delete_image(request):
     return redirect('/user')
 
 @login_required
+def update_image(request):
+    if request.method == 'POST':
+        img_id = request.POST['image']
+        ImgPost.objects.filter(id=img_id).delete()
+    return redirect('/user')
+
+@login_required
 def public_image(request):
     if request.method == 'POST':
         id = request.POST.get('image')

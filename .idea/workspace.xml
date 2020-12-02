@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5a947d2b-ec36-42be-ac05-86f08eec9c86" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/imagehub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/imagehub.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgprovider/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/imgprovider/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgprovider/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/imgprovider/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imgprovider/templates/user_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/imgprovider/templates/user_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgprovider/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/imgprovider/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgprovider/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/imgprovider/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,10 +34,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1j3eg7ycgeU9Cn9Q2jn27cKb0t0" />
@@ -53,10 +73,22 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="411" y="112" width="1022" height="737" key="SettingsEditor" timestamp="1604585505357">
-      <screen x="70" y="27" width="1648" height="901" />
+    <state x="67" y="27" width="733" height="573" key="SettingsEditor" timestamp="1606897092534">
+      <screen x="67" y="27" width="733" height="573" />
     </state>
+    <state x="67" y="27" width="733" height="573" key="SettingsEditor/67.27.733.573@67.27.733.573" timestamp="1606897092534" />
     <state x="411" y="112" width="1022" height="737" key="SettingsEditor/70.27.1648.901@70.27.1648.901" timestamp="1604585505357" />
   </component>
 </project>
