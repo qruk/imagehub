@@ -7,9 +7,9 @@
                 <img  height="400px"  src="{{ post.image.url }}" class="img-responsive" style="width: 60%;  margin-right: 10px;" />
                 <p class="text">
                     {{ post.author }} Рейтинг {{ post.rating }} дата {{ post.published_date }} Имя {{ post.title }}
-                    <form action="go_to_author_page/" method="post">
+                    <form action="../user/" method="post">
                         {% csrf_token %}
-                        <input type="hidden" name="image" value="{{ post.id }}" />
+                        <input type="hidden" name="author" value="{{ post.author }}" />
                         <button class="button" type="submit" > Страница автора </button>
                     </form>
                 </p>

@@ -44,6 +44,7 @@ def vote_for_image(request):
 
     return redirect('/')
 
+
 @login_required
 def delete_image(request):
     if request.method == 'POST':
@@ -51,12 +52,6 @@ def delete_image(request):
         ImgPost.objects.filter(id=img_id).delete()
     return redirect('/user')
 
-@login_required
-def update_image(request):
-    if request.method == 'POST':
-        img_id = request.POST['image']
-        ImgPost.objects.filter(id=img_id).delete()
-    return redirect('/user')
 
 @login_required
 def public_image(request):
@@ -90,12 +85,28 @@ def display_latest_of_images(request):
 
 def display_user_page(request):
     if request.method == 'GET':
-        ImgPosts = ImgPost.objects.all().order_by('-published_date')
-        author_name = "Ваша"
-        # print(len(ImgPost.objects.all()))
+        @login_required
+        def func(request):
+            username = request.user
+            ImgPosts = ImgPost.objects.all().filter(author=username).order_by('-published_date')
+            author_name = "Ваша"
+            return render(request, 'user_page.html', {'image_posts': ImgPosts, 'Title': 'Ваша страница',
+                                                      'author_name': author_name})
+        return func(request)
 
-    return render(request, 'user_page.html', {'image_posts': ImgPosts, 'Title': 'Ваша страница',
-                                              'author_name': author_name})
+    elif request.method == 'POST':
+        author_name = request.POST["author"]
+
+        print(author_name)
+        ImgPosts = [img_post for img_post in ImgPost.objects.all() if str(img_post.author) == str(author_name)]
+        print(type(ImgPosts))
+        print(ImgPosts)
+        print(len(ImgPosts))
+        return render(request, 'user_page.html', {'image_posts': ImgPosts, 'Title': 'Ваша страница',
+                                                  'author_name': author_name})
+    else:
+        return redirect('/top')
+
 
 def go_to_author_page(request):
     """
@@ -103,7 +114,7 @@ def go_to_author_page(request):
 
     """
     if request.method == 'POST':
-        author_name = ImgPost.objects.get(id=request.POST["image"]).author
+        author_name = request.POST["author"]
         print(author_name)
         ImgPosts = ImgPost.objects.all().filter(author=author_name)
         print(ImgPosts)

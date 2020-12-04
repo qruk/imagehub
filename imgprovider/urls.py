@@ -12,5 +12,4 @@ urlpatterns = [
     path('user/', display_user_page, name='user'),
     path('user/del_image/', delete_image, name='del_image'),
     path('user/public_image/', public_image, name='public_image'),
-    path('latest/go_to_author_page/', go_to_author_page, name='go_to_author_page'),
 ]
