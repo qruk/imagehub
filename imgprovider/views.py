@@ -91,6 +91,22 @@ def display_latest_of_images(request):
 def display_user_page(request):
     if request.method == 'GET':
         ImgPosts = ImgPost.objects.all().order_by('-published_date')
+        author_name = "Ваша"
         # print(len(ImgPost.objects.all()))
 
-    return render(request, 'user_page.html', {'image_posts': ImgPosts, 'Title': 'Ваша страница'})
+    return render(request, 'user_page.html', {'image_posts': ImgPosts, 'Title': 'Ваша страница',
+                                              'author_name': author_name})
+
+def go_to_author_page(request):
+    """
+    Косяк исправлен костылем!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    """
+    if request.method == 'POST':
+        author_name = ImgPost.objects.get(id=request.POST["image"]).author
+        print(author_name)
+        ImgPosts = ImgPost.objects.all().filter(author=author_name)
+        print(ImgPosts)
+        print(len(ImgPosts))
+    return render(request, 'user_page.html', {'image_posts': ImgPosts,
+                    'Title': "Страница "+str(author_name), 'author_name': author_name})

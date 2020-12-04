@@ -1,7 +1,7 @@
 {% extends 'baseBlock.html' %} &nbsp;
 <title>Страница пользователя</title>
 {% block content %}
-    <p class="text"> Новые картинки </p>
+    <p class="text"> Страница {{ author_name }}</p>
     {% for post in image_posts %}
             {% if user == post.author %}
             <div class="col-md-4">
