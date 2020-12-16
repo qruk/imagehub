@@ -1,7 +1,6 @@
 {% extends 'baseMy.html' %}
  
 {% block content %}
-	<h2>baseBlock.html</h2>
 	<form method="post">
 		{% csrf_token %}
 		{{ form.as_p }}
