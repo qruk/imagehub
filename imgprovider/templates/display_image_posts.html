@@ -4,7 +4,7 @@
     <h3> Топ 10 картинок  по рейтингу </h3>
     {% for post in image_posts %} 
             <div class="col-md-4">
-                <img  height="400px"  src="{{ post.image.url }}" class="img-responsive" style="width: 60%;  text-align:center;" />
+                <img  height="25%"  src="{{ post.image.url }}" class="img-responsive" style="width: 80%;  text-align:center;" />
                 <p class="text">
                     {{ post.author }} Рейтинг {{ post.rating }} дата {{ post.published_date }} Имя {{ post.title }}
                     <form action="../user/" method="post">
