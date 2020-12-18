@@ -7,7 +7,7 @@
                 <img    src="{{ post.image.url }}" class="img"  text-align:center;" />
                 <div align="center">
                  <center>
-                <p>
+                <p class="p">
                     {{ post.author }} Рейтинг {{ post.rating }} дата {{ post.published_date }} Имя {{ post.title }}
                     <form action="../user/" method="post" style="float:centrer; align:center">
                         {% csrf_token %}
