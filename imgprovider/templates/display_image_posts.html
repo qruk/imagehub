@@ -3,7 +3,7 @@
 {% block content %}
     <h3> Топ 10 картинок  по рейтингу </h3>
     {% for post in image_posts %} 
-            <div class="col-md-4" float="centrer" align="center">
+            <div class="col-md-4" style="float:centrer; align:center">
                 <img  height="100%"  src="{{ post.image.url }}" class="img-responsive" style="width: 300%;  text-align:center;" />
                 <div align="center">
                 <p class="text" align="center">
