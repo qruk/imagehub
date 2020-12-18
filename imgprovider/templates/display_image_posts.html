@@ -8,7 +8,7 @@
                 <div align="center">
                 <p class="text" align="center">
                     {{ post.author }} Рейтинг {{ post.rating }} дата {{ post.published_date }} Имя {{ post.title }}
-                    <form action="../user/" method="post">
+                    <form action="../user/" method="post" style="float:centrer; align:center">
                         {% csrf_token %}
                         <input type="hidden" name="author" value="{{ post.author }}" />
                         <button class="button" type="submit"  > Страница автора </button>
