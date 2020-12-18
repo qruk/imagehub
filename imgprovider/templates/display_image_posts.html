@@ -10,7 +10,7 @@
                     <form action="../user/" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="author" value="{{ post.author }}" />
-                        <button class="button" type="submit" > Страница автора </button>
+                        <button class="button" type="submit" style="text-align:center;" > Страница автора </button>
                     </form>
                 </p>
                 {% if user.is_authenticated %}
