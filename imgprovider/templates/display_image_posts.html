@@ -6,7 +6,7 @@
             <div class="col-md-4" style="float:centrer; align:center">
                 <img  height="100%"  src="{{ post.image.url }}" class="img-responsive" style="width: 300%;  text-align:center;" />
                 <div align="center">
-                <p class="text" align="center">
+                <p  align="center">
                     {{ post.author }} Рейтинг {{ post.rating }} дата {{ post.published_date }} Имя {{ post.title }}
                     <form action="../user/" method="post" style="float:centrer; align:center">
                         {% csrf_token %}
