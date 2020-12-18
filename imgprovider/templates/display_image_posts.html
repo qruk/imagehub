@@ -5,6 +5,7 @@
     {% for post in image_posts %} 
             <div class="col-md-4">
                 <img  height="100%"  src="{{ post.image.url }}" class="img-responsive" style="width: 300%;  text-align:center;" />
+                <div align="center">
                 <p class="text" align="center">
                     {{ post.author }} Рейтинг {{ post.rating }} дата {{ post.published_date }} Имя {{ post.title }}
                     <form action="../user/" method="post">
@@ -12,7 +13,7 @@
                         <input type="hidden" name="author" value="{{ post.author }}" />
                         <button class="button" type="submit"  > Страница автора </button>
                     </form>
-                </p>
+                </p> </div>
                 {% if user.is_authenticated %}
                     <form action="vote_for_image/" method="post">
                         {% csrf_token %}
