@@ -1,7 +1,7 @@
 {% extends 'baseBlock.html' %} &nbsp;
 <title>Страница пользователя</title>
 {% block content %}
-    <h3> Топ 10 картинок  по рейтингу </h3>
+    <h3 class="h3"> Топ 10 картинок  по рейтингу </h3>
     {% for post in image_posts %} 
             <div class="col-md-4" style="float:centrer; align:center">
                 <img    src="{{ post.image.url }}" class="img"  text-align:center;" />
