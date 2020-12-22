@@ -15,7 +15,6 @@
              width: 100%;
              height: 10%;
              outline: 0px solid #000;
-             margin:0% 55% 0% 0%;
         }
 
         #container {
@@ -73,6 +72,9 @@
              margin:2% 15% 2% 0%;
         }
 
+        .headmargin {
+            margin:2% 15% 2% 0%;
+        }
 
         .button
                       {
@@ -113,8 +115,10 @@
 <body>
 <div id="container">
 	<div id="header">
-	<a href="{% url 'top' %}"><h1 class="h">Fotogram</h1></a>
-        <h3>сайт для ваших фото</h3>
+        <div class="headmargin">
+        <a href="{% url 'top' %}"><h1 class="h">Fotogram</h1></a>
+            <h3>сайт для ваших фото</h3>
+        </div>
 	</div>
 
 	<div id="sidebar">
