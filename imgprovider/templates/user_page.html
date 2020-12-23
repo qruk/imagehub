@@ -5,10 +5,11 @@
     {% for post in image_posts %}
             <div class="col-md-4">
                 <img  src="{{ post.image.url }}" class="img"  />
-                <p>
+                <p class="p">
                     {{ post.author }} Рейтинг {{ post.rating }} дата {{ post.published_date }} Имя {{ post.title }}
                 </p>
                 {% if user == post.author %}
+                <div class="formmagin">
                     <form action="public_image/" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="image" value="{{ post.id }}" />
@@ -19,6 +20,7 @@
                         <input type="hidden" name="image" value="{{ post.id }}" />
                         <button class="button" type="submit" > Удалить </button>
                     </form>
+                </div>
                 {% endif %}
 		    </div>
            {% endfor %}
