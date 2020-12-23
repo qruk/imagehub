@@ -4,8 +4,8 @@
     <h3> Новые картинки </h3>
     {% for post in image_posts %} 
             <div class="col-md-4">
-                <img  height="400px"  src="{{ post.image.url }}" class="img-responsive" style="width: 60%;  margin-right: 10px;" />
-                <p class="text">
+                <img   src="{{ post.image.url }}" class="img" />
+                <p class="p">
                     {{ post.author }} Рейтинг {{ post.rating }} дата {{ post.published_date }} Имя {{ post.title }}
                     <form action="../user/" method="post">
                         {% csrf_token %}
