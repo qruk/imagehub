@@ -4,8 +4,8 @@
     <p class="text"> Страница {{ author_name }}</p>
     {% for post in image_posts %}
             <div class="col-md-4">
-                <img  class="img" />
-                <p class="p">
+                <img  src="{{ post.image.url }}" class="img"  />
+                <p>
                     {{ post.author }} Рейтинг {{ post.rating }} дата {{ post.published_date }} Имя {{ post.title }}
                 </p>
                 {% if user == post.author %}
