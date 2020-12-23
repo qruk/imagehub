@@ -1,7 +1,7 @@
 {% extends 'baseBlock.html' %} &nbsp;
 <title>Страница пользователя</title>
 {% block content %}
-    <h3> Новые картинки </h3>
+    <h3 class="h3"> Новые картинки </h3>
     {% for post in image_posts %} 
             <div class="col-md-4">
                 <img   src="{{ post.image.url }}" class="img" />
